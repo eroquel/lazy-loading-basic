@@ -1,7 +1,7 @@
 import { registerImage } from "./lazy.js";
 
 const maximum = 122;
-const minimum = 0;
+const minimum = 1;
 
 const random = () => Math.floor(Math.random() * (maximum - minimum)) + minimum;
 
@@ -23,8 +23,8 @@ const mountNode = document.getElementById("images");
 const myButton = document.querySelector("button");
 const addImage = () => {
     const newImage = createImageNode();
-    mountNode.appendChild(newImage);
-    registerImage(newImage);
+    mountNode.appendChild(newImage); //Esto es para insertar la imagen en el DOM
+    registerImage(newImage); //Esto es para que escuche la imagen que se insertó en el DOM
 };
 
 myButton.addEventListener("click", addImage);
